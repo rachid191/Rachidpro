@@ -1,0 +1,75 @@
+<!-- ==================== index.html ==================== -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rachidpro - Encyclopédie Physique</title>
+    <!-- Polices Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+    <!-- MathJax -->
+    <script>
+        window.MathJax = {
+            tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+            svg: { fontCache: 'global' }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
+    <!-- Feuille de style externe -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header class="app-header">
+        <h1>Rachidpro</h1>
+    </header>
+
+    <div class="main-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>📚 Sections</h3>
+                <select class="section-select" id="sectionSelect">
+                    <option value="sec1">⚡ Électricité</option>
+                    <option value="sec2">🔬 Physique Moderne</option>
+                    <option value="sec3">💡 Lumière &amp; Réflexion</option>
+                    <option value="sec4">🎵 Ondes Sonores</option>
+                    <option value="sec5">🚗 Mouvement</option>
+                    <option value="sec6">🏋️ Force &amp; Mouvement</option>
+                    <option value="sec7">🌡️ Chaleur</option>
+                    <option value="sec8">🪐 Gravitation</option>
+                    <option value="sec9">🌀 Magnétisme</option>
+                </select>
+            </div>
+            <div class="formula-list" id="formulaList"></div>
+        </aside>
+
+        <!-- Zone de contenu -->
+        <main class="content-area">
+            <div class="content-card" id="contentCard">
+                <div class="content-placeholder" id="placeholder">
+                    <span style="font-size:4.5rem;display:block;margin-bottom:18px;">📖</span>
+                    <p>Sélectionnez une formule dans la liste pour afficher sa preuve ou un exercice.</p>
+                </div>
+                <div id="formulaContent" style="display:none;">
+                    <h3 id="formulaName" style="color:#0ff;margin-bottom:8px;text-shadow:0 0 8px rgba(0,255,255,0.3);"></h3>
+                    <div class="formula-display" id="formulaDisplay"></div>
+                    <div class="desc-display" id="formulaDesc"></div>
+                    <div class="action-buttons" id="actionButtons">
+                        <button class="btn btn-proof" onclick="showProof()">📝 Preuve mathématique</button>
+                        <button class="btn btn-exercise" onclick="showExercise()">📋 Exercice avec solution</button>
+                    </div>
+                    <div id="resultArea"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="app-footer">
+        <p>Rachidpro © 2024</p>
+    </footer>
+
+    <!-- Script externe -->
+    <script src="script.js"></script>
+</body>
+</html>
